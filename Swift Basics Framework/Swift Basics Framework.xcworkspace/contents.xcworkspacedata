@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:Swift_Basics_FrameworkTests/SampleTests.swift">
+   </FileRef>
+   <FileRef
+      location = "group:SwiftPlayground.playground">
+   </FileRef>
+   <FileRef
+      location = "group:Swift Basics Framework.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
+</Workspace>
