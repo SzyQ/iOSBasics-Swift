@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' executeOnSourceChanges='true'>
+    <pages>
+        <page name='Enum'/>
+        <page name='Untitled Page'/>
+        <page name='Struct'/>
+        <page name='Protocol'/>
+        <page name='Error handling'/>
+        <page name='ARC'/>
+        <page name='ARC2'/>
+        <page name='Extensions'/>
+        <page name='Generics'/>
+        <page name='GDC'/>
+        <page name='Combine'/>
+        <page name='URLSession'/>
+    </pages>
+</playground>
