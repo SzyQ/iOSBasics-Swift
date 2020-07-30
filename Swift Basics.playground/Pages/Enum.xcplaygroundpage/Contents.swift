@@ -15,7 +15,7 @@ enum Planet : Int {
 
 let directionToHead = CompassPoint.south
 switch directionToHead {
-case .north:
+case CompassPoint.north:
     print("Lots of planets have a north")
 case .south:
     print("Watch out for penguins")
@@ -36,7 +36,7 @@ default:
 enum Beverage: CaseIterable {
     case coffee, tea, juice
 }
-let numberOfChoices = Beverage.allCases.count
+let numberOfChoices = Beverage.allCases
 print("\(numberOfChoices) beverages available")
 for beverage in Beverage.allCases {
     print(beverage)
@@ -64,7 +64,7 @@ productBarcode = .qrCode("ABCDEFGHIJKLMNOP")
 switch productBarcode {
 case let .upc(numberSystem, manufacturer, product, check):
     print("UPC : \(numberSystem), \(manufacturer), \(product), \(check).")
-case let .qrCode(productCode):
+case .qrCode(let productCode):
     print("QR code: \(productCode).")
 }
 
@@ -103,6 +103,8 @@ func evaluate(_ expression: ArithmeticExpression) -> Int {
         return evaluate(left) * evaluate(right)
     }
 }
+
+evaluate(product)
 
 
 enum SimpleValue {

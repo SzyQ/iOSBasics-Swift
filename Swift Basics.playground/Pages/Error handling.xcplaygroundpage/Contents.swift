@@ -6,6 +6,7 @@ enum TooMuchFun : Error {
     case wayTooMuch
     case almostRight
 }
+
 func throwingFunction(shouldThrow: Bool) throws {
     defer {
         print("Defer is always called!")

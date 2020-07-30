@@ -11,13 +11,18 @@ var characters = (dc + marvel).shuffled()
 let charactersSet = Set(characters + characters)
 charactersSet.count == characters.count
 
-struct MyType : Hashable{
+struct MyType : Hashable, Equatable{
     let name: String
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(name)
     }
+    
+    static func == (lhs: Self, rhs: Self) -> Bool {
+        return lhs.name == rhs.name
+    }
 }
+let myType = MyType(name: "smth")
 let dcCharacters = Set([MyType(name: "Simon")])
 for character in dcCharacters {
     print(character)
@@ -27,10 +32,10 @@ for character in dcCharacters {
 let oddDigits: Set = [1, 3, 5, 7, 9]
 let evenDigits: Set = [0, 2, 4, 6, 8]
 let singleDigitPrimeNumbers: Set = [2, 3, 5, 7]
-//oddDigits.union(evenDigits).sorted()
-//oddDigits.intersection(evenDigits).sorted()
-//oddDigits.subtracting(singleDigitPrimeNumbers).sorted()
-//oddDigits.symmetricDifference(singleDigitPrimeNumbers).sorted()
+oddDigits.union(evenDigits).sorted()
+oddDigits.intersection(evenDigits).sorted()
+oddDigits.subtracting(singleDigitPrimeNumbers).sorted()
+oddDigits.symmetricDifference(singleDigitPrimeNumbers).sorted()
 
 // Dictionary
 let characterPairs = ["Batman" : "Catwoman", "Stargirl" : "Starman"]
@@ -54,10 +59,10 @@ default:
     print("Default")
 }
 
-switch(5) {
+switch(5.0) {
 case 0:
     print("It's 0")
-case 1...10:
+case 1...4.9:
     print("It's a ten")
 default:
     print("None of those")
@@ -74,6 +79,8 @@ case (1,2):
 default:
     print("None matches")
 }
+
+
 let anotherPoint = (2, 0)
 switch anotherPoint {
 case (let x, 0):
@@ -105,7 +112,14 @@ default:
 }
 
 func tryGuardStatement() {
-    let optionalValue : Int? = nil
-    guard let value = optionalValue else {return}
-    print("I'm in tryGuardStatement")
+    let optionalValue : Int? = 1
+    //guard let value = optionalValue else {return}
+    if let value = optionalValue {
+        print("I'm in tryGuardStatement \(value)")
+    } else {
+        return
+    }
+    
 }
+
+tryGuardStatement()
